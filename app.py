@@ -31,7 +31,10 @@ def get_by_pk(pk):
 
 @app.route("/candidates/<candidate_name>")
 def get_by_name(candidate_name):
-    list_candidate_name = utils.get_candidates_by_name(candidate_name)
+
+    lower_name = candidate_name.lower()
+    list_candidate_name = utils.get_candidates_by_name(lower_name)
+
     number_of_candidates = len(list_candidate_name)
     return render_template('search.html', list_candidate_name=list_candidate_name,
                            number_of_candidates=number_of_candidates)

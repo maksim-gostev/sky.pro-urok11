@@ -32,7 +32,7 @@ def get_candidates_by_name(candidate_name):
     list_of_candidates = load_candidates(FILE)
     result = []
     for candidat in list_of_candidates:
-        if candidate_name in candidat.lower().split(' '):
+        if candidate_name in candidat["name"].lower().split():
             result.append(candidat)
     return result
 
