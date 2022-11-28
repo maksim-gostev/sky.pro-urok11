@@ -39,6 +39,10 @@ def get_candidates_by_name(candidate_name):
 
 
 def get_candidates_by_skill(skill_name):
-    #– возвращает кандидатов по навыку
-    pass
+    list_of_candidates = load_candidates(FILE)
+    result = []
+    for candidat in list_of_candidates:
+        if skill_name in candidat["skills"].lower().split(', '):
+            result.append(candidat)
+    return result
 

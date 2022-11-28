@@ -40,7 +40,7 @@ def get_by_name(candidate_name):
                            number_of_candidates=number_of_candidates)
 
 
-@app.route("/candidates/<skill>")
+@app.route("/skill/<skill>")
 def get_by_skills(skill):
     """
     возвращает кандидатов по навыку
@@ -49,7 +49,9 @@ def get_by_skills(skill):
     """
     skill_lower = skill.lower()
     candidates = utils.get_candidates_by_skill(skill_lower)
-    result = utils.format_list(candidates)
-    return result
+    len_candidates = len(candidates)
+    return render_template('skill.html', candidates=candidates, len_candidates=len_candidates,
+                           skill=skill.capitalize())
+
 
 app.run()
