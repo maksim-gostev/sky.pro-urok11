@@ -29,7 +29,13 @@ def get_candidate(pk):
 
 
 def get_candidates_by_name(candidate_name):
+    """
+    поиск кандидатов по имени
+    :param candidate_name: имя кондидата
+    :return: список данных кандидатов
+    """
     list_of_candidates = load_candidates(FILE)
+    # список словарей
     result = []
     for candidat in list_of_candidates:
         if candidate_name in candidat["name"].lower().split():
@@ -39,7 +45,13 @@ def get_candidates_by_name(candidate_name):
 
 
 def get_candidates_by_skill(skill_name):
+    """
+    поиск кандидатов по навыку
+    :param skill_name: навык
+    :return: список данных кандидатов
+    """
     list_of_candidates = load_candidates(FILE)
+    # список словарей
     result = []
     for candidat in list_of_candidates:
         if skill_name in candidat["skills"].lower().split(', '):

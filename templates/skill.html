@@ -1,4 +1,9 @@
-<h1>Найдено со скиллом {{skill}}: {{len_candidates}}</h2>
-{% for candidat in candidates %}
-    <p><a href={{candidat.picture}}>{{candidat.name}}</a></p>
-{% endfor %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+      <meta charset="UTF-8">
+      <title>Заголовок документа</title>
+      <h2>Найдено со скиллом {{skill}}: {{len_candidates}}</h2>
+    {% for candidat in candidates %}
+        <p><a href={{candidat.picture}}>{{candidat.name}}</a></p>
+    {% endfor %}

@@ -31,7 +31,11 @@ def get_by_pk(pk):
 
 @app.route("/candidates/<candidate_name>")
 def get_by_name(candidate_name):
-
+    """
+    возвращает кондидатов по имени
+    :param candidate_name: имя
+    :return: список кондидатов
+    """
     lower_name = candidate_name.lower()
     list_candidate_name = utils.get_candidates_by_name(lower_name)
 

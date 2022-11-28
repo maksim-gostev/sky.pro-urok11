@@ -1,5 +1,10 @@
-<h2>найдено кандидатов {{number_of_candidates}}</h2>
-{% for candidat in list_candidate_name %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+      <meta charset="UTF-8">
+      <title>Заголовок документа</title>
+      <h2>найдено кандидатов {{number_of_candidates}}</h2>
+      {% for candidat in list_candidate_name %}
         <p><a href={{candidat.picture}}>{{candidat.name}}</a></p>
       {% endfor %}
 
